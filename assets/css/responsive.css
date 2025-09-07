@@ -147,6 +147,26 @@
     gap: 0.4rem;
   }
 
+  /* main */
+  .item1 img.logo{
+    display: none;
+  }
+
+  .item1 img.slogan{
+    width: 100%;
+  }
+
+  .store-buttons{
+    display: none;
+  }
+
+  .swiper-pagination{
+    flex-direction: row;
+    top: 82%!important;
+    left: 50%!important;
+    transform: translateX(-50%)!important;
+  }
+
   /* footer */
   .footer {
     display: none;
