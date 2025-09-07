@@ -164,15 +164,53 @@
   }
 
   /* item 2 3 4 */
-  .item-other .right {
+
+  .item-other {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* H1 lên đầu */
+  .item-other .right h1 {
+    order: 1;
+    margin-bottom: 2rem;
+    font-size: 3.4rem;
+  }
+
+  /* Ảnh ở giữa */
+  .item-other .left {
+    order: 2;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
+    margin-bottom: 2rem;
+    max-height: 60%;
   }
 
-  .item-other .right img.logo {
-    display: none;
+  .item-other .left img {
+    height: 60vh;
+    max-height: 80vh;
+    width: auto;
+    object-fit: cover;
   }
 
-  .item-other p {
+  /* Nút xuống cuối */
+  .item-other .store-buttons--mobile {
+    order: 3;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  /* Ẩn logo nhỏ và p */
+  .item-other .right img.logo,
+  .item-other p,
+  .item-other .store-buttons {
     display: none;
   }
 
