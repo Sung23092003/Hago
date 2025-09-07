@@ -187,6 +187,7 @@
   .store-buttons img {
     margin-top: 4rem;
     width: 160px;
+    max-width: 160px;
   }
 
   .swiper-pagination {
@@ -195,6 +196,7 @@
     top: 76% !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
+    justify-content: center;
   }
 
   /* footer */
