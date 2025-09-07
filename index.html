@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="./assets/font/fontawesome-free-7.0.1-web/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./assets/css/reset.css">
-    <link rel="stylesheet" href="./assets/css/responsive.css">
     <link rel="stylesheet" href="./assets/css/home.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
 </head>
 
 <body>
@@ -52,6 +52,12 @@
                             <li><a href="#">عربى</a></li>
                         </ul>
                     </div>
+
+                    <!-- Button 3: mobile -->
+                    <button class="header__menu-btn">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+
                 </div>
             </div>
         </header>
@@ -173,23 +179,110 @@
         </footer>
         <!-- end: footer -->
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
-        const swiper = new Swiper('.swiper', {
-            direction: 'vertical',
-            loop: true,
-            mousewheel: true, 
-            autoplay: {
-                delay: 12000, 
-                disableOnInteraction: false, 
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-        });
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <ul>
+            <!-- Ngôn ngữ xổ xuống -->
+            <li class="sidebar-lang">
+                <a href="javascript:void(0)" id="lang-toggle">
+                    English <i class="fa-solid fa-chevron-down"></i>
+                </a>
+                <ul class="lang-list">
+                    <li><a href="#">English</a></li>
+                    <li><a href="#">हिंदी</a></li>
+                    <li><a href="#">Bahasa Indonesia</a></li>
+                    <li><a href="#">Português</a></li>
+                    <li><a href="#">Español</a></li>
+                    <li><a href="#">ไทย</a></li>
+                    <li><a href="#">Tiếng Việt</a></li>
+                    <li><a href="#">عربى</a></li>
+                </ul>
+            </li>
 
-    </script>
+            <!-- Menu -->
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Safety Policy for Children</a></li>
+        </ul>
+
+        <!-- Social icons -->
+        <div class="sidebar__social">
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
 </body>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    const swiper = new Swiper('.swiper', {
+        direction: 'vertical',
+        loop: true,
+        mousewheel: true,
+        autoplay: {
+            delay: 12000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+    });
+
+</script>
+<script>
+    const menuBtn = document.querySelector(".header__menu-btn");
+    const sidebar = document.getElementById("sidebar");
+    const overlay = document.getElementById("overlay");
+    let isOpen = false;
+
+    menuBtn.addEventListener("click", () => {
+        isOpen = !isOpen;
+        sidebar.classList.toggle("active");
+        overlay.classList.toggle("active");
+
+        // đổi icon
+        if (isOpen) {
+            menuBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+        } else {
+            menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+        }
+    });
+
+    // Click overlay đóng sidebar
+    overlay.addEventListener("click", () => {
+        sidebar.classList.remove("active");
+        overlay.classList.remove("active");
+        menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+        isOpen = false;
+    });
+
+    // Toggle dropdown language trong sidebar
+    const langToggle = document.getElementById("lang-toggle");
+    const langList = document.querySelector(".sidebar .lang-list");
+
+    langToggle.addEventListener("click", (e) => {
+        e.preventDefault();
+        langList.classList.toggle("active");
+
+        // đổi icon mũi tên
+        const icon = langToggle.querySelector("i");
+        if (langList.classList.contains("active")) {
+            icon.classList.remove("fa-chevron-down");
+            icon.classList.add("fa-chevron-up");
+        } else {
+            icon.classList.remove("fa-chevron-up");
+            icon.classList.add("fa-chevron-down");
+        }
+    });
+
+</script>
 
 </html>
