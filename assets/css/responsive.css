@@ -163,6 +163,19 @@
     object-fit: contain;
   }
 
+  /* item 2 3 4 */
+  .item-other .right {
+    width: 100%;
+  }
+
+  .item-other .right img.logo {
+    display: none;
+  }
+
+  .item-other p {
+    display: none;
+  }
+
   .store-buttons {
     justify-content: center;
   }
@@ -172,13 +185,14 @@
   }
 
   .store-buttons img {
+    margin-top: 4rem;
     width: 160px;
   }
 
   .swiper-pagination {
     width: auto !important;
     flex-direction: row;
-    top: 90% !important;
+    top: 78% !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
   }
