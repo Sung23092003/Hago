@@ -143,6 +143,10 @@
     color: #333;
   }
 
+  .header__btn{
+    gap: 0.4rem;
+  }
+
   /* footer */
   .footer {
     display: none;
