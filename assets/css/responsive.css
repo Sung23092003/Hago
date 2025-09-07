@@ -60,7 +60,7 @@
 }
 
 .sidebar__social a:hover {
-  color: #ffcc00; 
+  color: #ffcc00;
 }
 
 /* Overlay */
@@ -93,6 +93,10 @@
 
   .header .container {
     padding: 0 1.6rem;
+  }
+
+  .header__logo img {
+    height: 6rem;
   }
 
   /* Ẩn nav list + dropdown */
