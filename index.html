@@ -223,7 +223,6 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
     const swiper = new Swiper('.swiper', {
-        direction: 'vertical',
         loop: true,
         mousewheel: true,
         autoplay: {
@@ -234,7 +233,18 @@
             el: '.swiper-pagination',
             clickable: true,
         },
+        breakpoints: {
+            // Mobile: max-width 768px
+            0: {
+                direction: 'horizontal', // ngang
+            },
+            // Desktop: từ 769px trở lên
+            769: {
+                direction: 'vertical',   // dọc
+            },
+        },
     });
+
 
 </script>
 <script>
