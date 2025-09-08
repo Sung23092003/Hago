@@ -233,12 +233,13 @@
   }
 
   .swiper-pagination {
-    width: auto !important;
+    /* width: auto !important;
     flex-direction: row;
     top: 76% !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
-    justify-content: center;
+    justify-content: center; */
+    display: none;
   }
 
   /* footer */
@@ -252,7 +253,7 @@
   /* Header */
   /* Header nhỏ gọn */
   .header {
-    width: 100%;
+    width: 100%;  
     max-height: 10rem;
   }
 
@@ -334,7 +335,8 @@
 
   /* Swiper Pagination */
   .swiper-pagination {
-    right: 5% !important;
+    /* right: 5% !important; */
+    display: none;
   }
 
   /* Footer */
