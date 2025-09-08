@@ -146,7 +146,7 @@
                     </div>
                 </div>
 
-                <div class="store-buttons--mobile">
+                <div class="store-buttons--mobile" id="store-buttons-mobile">
                     <img src="./assets/img/appStore.png" alt="">
                 </div>
 
@@ -245,6 +245,10 @@
     const menuBtn = document.querySelector(".header__menu-btn");
     const sidebar = document.getElementById("sidebar");
     const overlay = document.getElementById("overlay");
+    // set store buttons cho mobile
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    const storeContainer = document.getElementById("store-buttons-mobile");
+    // 
     let isOpen = false;
 
     menuBtn.addEventListener("click", () => {
@@ -286,6 +290,18 @@
             icon.classList.add("fa-chevron-down");
         }
     });
+
+      // Xác định hệ điều hành
+    if (/android/i.test(userAgent)) {
+        storeContainer.innerHTML = `<img src="./assets/img/chPlay.png" alt="Google Play">`;
+    } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        storeContainer.innerHTML = `<img src="./assets/img/appStore.png" alt="App Store">`;
+    } else if (/huawei/i.test(userAgent)) {
+        storeContainer.innerHTML = `<img src="./assets/img/huawei.png" alt="Huawei Store">`;
+    } else {
+        // fallback (APK cho PC hoặc hệ khác)
+        storeContainer.innerHTML = `<img src="./assets/img/apk.png" alt="APK">`;
+    }
 
 </script>
 
