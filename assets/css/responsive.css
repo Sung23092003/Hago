@@ -150,7 +150,7 @@
   /* main */
 
   .swiper-slide{
-    margin-bottom: -2%;
+    /* margin-bottom: -2%; */
   }
 
   .item1 img.logo {
@@ -213,7 +213,7 @@
 
   .store-buttons--mobile {
     position: absolute;
-    bottom: 7%;
+    bottom: 6%;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1000;
