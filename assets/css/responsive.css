@@ -199,12 +199,21 @@
   }
 
   /* Nút xuống cuối */
-  .item-other .store-buttons--mobile {
+  /* .item-other .store-buttons--mobile {
     order: 3;
     display: flex;
     justify-content: center;
     gap: 1rem;
+  } */
+
+  .store-buttons--mobile {
+    position: absolute;
+    bottom: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
   }
+
 
   .store-buttons--mobile img {
     width: 160px;
@@ -218,7 +227,7 @@
     display: none;
   }
 
-  .store-buttons {
+  /* .store-buttons {
     justify-content: center;
   }
 
@@ -230,6 +239,10 @@
     margin-top: 4rem;
     width: 160px;
     max-width: 160px;
+  } */
+
+  .store-buttons {
+    display: none;
   }
 
   .swiper-pagination {
@@ -253,7 +266,7 @@
   /* Header */
   /* Header nhỏ gọn */
   .header {
-    width: 100%;  
+    width: 100%;
     max-height: 10rem;
   }
 
@@ -361,7 +374,7 @@
     width: 110rem;
   }
 
-  .item-other{
+  .item-other {
     width: 80%;
   }
 }
