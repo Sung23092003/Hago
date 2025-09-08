@@ -148,6 +148,11 @@
   }
 
   /* main */
+
+  .swiper-slide{
+    margin-bottom: -4%;
+  }
+
   .item1 img.logo {
     display: none;
   }
@@ -208,7 +213,7 @@
 
   .store-buttons--mobile {
     position: absolute;
-    bottom: 8%;
+    bottom: 9%;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1000;
